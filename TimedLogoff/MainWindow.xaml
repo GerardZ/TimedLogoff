@@ -1,0 +1,15 @@
+﻿<Window x:Name="Auto_Logout" x:Class="TimedLogoff.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimedLogoff"
+        mc:Ignorable="d"
+        Title="Auto_Logout" Height="189" Width="484">
+    <Grid Margin="10,10,10,8">
+        <Button x:Name="CancelButton" Content="DoeMaarEvenNiet" Height="26" Margin="112,94,107,0" VerticalAlignment="Top" FontSize="16" Click="CancelButton_Click"/>
+        <ProgressBar x:Name="progress" HorizontalAlignment="Center" Height="11" Margin="0,58,0,0" VerticalAlignment="Top" Width="424" Foreground="#FF13F76A" Background="#FFF92807"/>
+        <Label x:Name="mainLabel" Content="Label" HorizontalAlignment="Left" Height="34" Margin="25,10,0,0" VerticalAlignment="Top" Width="419" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
