@@ -1,8 +1,7 @@
 {
   "profiles": {
     "TimedLogoff": {
-      "commandName": "Project",
-      "commandLineArgs": "123 sleep"
+      "commandName": "Project"
     }
   }
 }
