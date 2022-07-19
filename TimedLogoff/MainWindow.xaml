@@ -9,7 +9,7 @@
     <Grid Margin="10,10,10,8">
         <Button x:Name="CancelButton" Content="DoeMaarEvenNiet" Height="26" Margin="112,94,107,0" VerticalAlignment="Top" FontSize="16" Click="CancelButton_Click"/>
         <ProgressBar x:Name="progress" HorizontalAlignment="Center" Height="11" Margin="0,58,0,0" VerticalAlignment="Top" Width="424" Foreground="#FF13F76A" Background="#FFF92807"/>
-        <Label x:Name="mainLabel" Content="Label" HorizontalAlignment="Left" Height="34" Margin="25,10,0,0" VerticalAlignment="Top" Width="419" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="mainLabel" Content="Label" HorizontalAlignment="Center" Height="34" Margin="25,10,0,0" VerticalAlignment="Top" Width="419" FontSize="18" FontWeight="Bold"/>
 
     </Grid>
 </Window>
