@@ -73,7 +73,7 @@ namespace TimedLogoff
             {
                 Application.Current.MainWindow.Activate();
             }
-            catch { }
+            catch (System.NullReferenceException ex) { }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
