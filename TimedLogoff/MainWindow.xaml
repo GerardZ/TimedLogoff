@@ -11,6 +11,5 @@
         <Button x:Name="CancelButton" Content="DoeMaarEvenNiet" Margin="110,83,110,10" FontSize="16" Click="CancelButton_Click"/>
         <ProgressBar x:Name="progress" HorizontalAlignment="Center" Height="16" Margin="0,49,0,0" VerticalAlignment="Top" Width="759" Foreground="#FF13F76A" Background="#FFF92807"/>
         <Label x:Name="mainLabel" Content="" HorizontalAlignment="Left" Height="34" Margin="185,0,0,0" VerticalAlignment="Top" Width="375" FontSize="18" FontWeight="Bold"/>
-
     </Grid>
 </Window>

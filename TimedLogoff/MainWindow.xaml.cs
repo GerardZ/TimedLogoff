@@ -12,8 +12,8 @@ namespace TimedLogoff
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int timerGrantStart = 150;
-        
+        private int timerGrantStart = 300;
+
         private int timerGrant;
 
         private DispatcherTimer timer;
@@ -38,7 +38,7 @@ namespace TimedLogoff
             string[] arguments = Environment.GetCommandLineArgs();
             Console.WriteLine("GetCommandLineArgs: {0}", string.Join(", ", arguments));
 
-            foreach(string arg in arguments)
+            foreach (string arg in arguments)
             {
                 if (arg.ToLower() == "sleep") endMode = EndMode.Sleep;
                 if (arg.ToLower() == "shutdown") endMode = EndMode.Shutdown;
@@ -58,22 +58,29 @@ namespace TimedLogoff
             {
                 timer.Stop();
                 if (endMode == EndMode.Shutdown) WindowsShutdown(true);
-                if (endMode == EndMode.Sleep)    WindowsSleep();
-                if (endMode == EndMode.Logoff)   WindowsLogOff(true);
+                if (endMode == EndMode.Sleep) WindowsSleep();
+                if (endMode == EndMode.Logoff) WindowsLogOff(true);
                 this.Close();
             }
 
             if (endMode == EndMode.Shutdown) mainLabel.Content = $"Pc gaat over {timerGrant--} seconden shutdown...";
-            if (endMode == EndMode.Sleep) mainLabel.Content =    $"Pc gaat over {timerGrant--} seconden in sleep mode...";
-            if (endMode == EndMode.Logoff) mainLabel.Content =   $"U wordt over {timerGrant--} seconden uitgelogd...";
+            if (endMode == EndMode.Sleep) mainLabel.Content = $"Pc gaat over {timerGrant--} seconden in sleep mode...";
+            if (endMode == EndMode.Logoff) mainLabel.Content = $"U wordt over {timerGrant--} seconden uitgelogd...";
 
-            progress.Value = timerGrant * 100/timerGrantStart;
+            progress.Value = timerGrant * 100 / timerGrantStart;
+            
+            try  // when locked this may raise an exception
+            {
+                Application.Current.MainWindow.Activate();
+            }
+            catch { }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+        
 
 
         // WindowsLogoff
@@ -132,7 +139,7 @@ namespace TimedLogoff
     }
     public class Settings
     {
-        public string mode { get; set; }    
+        public string mode { get; set; }
     }
 
     enum EndMode
